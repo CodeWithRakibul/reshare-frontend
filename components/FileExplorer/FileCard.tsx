@@ -31,7 +31,7 @@ function FileCardComponent({
     return (
         <div
             className={cn(
-                'flex items-center p-3 hover:bg-zinc-100 cursor-pointer relative group border-b border-neutral-200',
+                'flex items-center p-3 hover:bg-zinc-100 cursor-pointer relative group border-b border-neutral-200 last:border-b-0',
                 selectedFile === file.id && 'bg-zinc-100',
                 checkedFiles.has(file.id) && 'bg-zinc-100'
             )}
