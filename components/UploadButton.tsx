@@ -1,29 +1,16 @@
-import { Button } from '@/components/ui/button';
+import { Button, type VariantProps } from '@/components/ui/button';
+import { PlusIcon } from 'lucide-react';
 
 interface UploadButtonProps {
-    variant?: 'default' | 'secondary';
+    variant?: VariantProps<typeof Button>['variant'];
+    size?: VariantProps<typeof Button>['size'];
 }
 
-export function UploadButton({ variant = 'default' }: UploadButtonProps) {
+export function UploadButton({ variant = 'default', size = 'sm' }: UploadButtonProps) {
     return (
-        <Button variant={variant} className='w-full gap-2 group'>
-            <svg
-                width='16'
-                height='16'
-                viewBox='0 0 24 24'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-                className='group-hover:translate-y-[-2px] transition-transform'
-            >
-                <path
-                    d='M12 5V19M19 12L12 5L5 12'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                />
-            </svg>
-            Upload
+        <Button size={size} variant={variant} className='gap-3.5 text-sm group cursor-pointer'>
+            <PlusIcon className='text-[#999999] group-hover:text-accent' />
+            <span>Upload</span>
         </Button>
     );
 }
