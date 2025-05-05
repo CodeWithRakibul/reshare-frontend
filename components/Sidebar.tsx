@@ -86,14 +86,17 @@ export function Sidebar() {
                         className='flex items-center p-2 rounded-lg text-[13px] font-normal leading-5 text-foreground hover:bg-sidebar-accent hover:backdrop-blur-sm hover:text-accent-foreground transition-colors'
                     >
                         <span className='flex gap-2 items-center'>
-                            <Image
-                                src={item.icon}
-                                alt={item.title}
-                                width={16}
-                                height={16}
-                                className='text-foreground size-5'
-                            />
-                            {item.title}
+                            <span className='size-5 flex items-center justify-center'>
+                                <Image
+                                    src={item.icon}
+                                    alt={item.title}
+                                    width={16}
+                                    height={16}
+                                    className='text-foreground'
+                                />
+                            </span>
+
+                            <span className='text-[13px] font-normal leading-5'>{item.title}</span>
                         </span>
                     </Link>
                 ))}
