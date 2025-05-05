@@ -21,7 +21,6 @@ type FileContextType = {
     addFiles: (newFiles: FileType[]) => void;
     deleteSelectedFiles: () => void;
     getFileIcon: (fileType: string) => string;
-    getAvatarInfo: (fileName: string) => { style: string; seed: string };
     refreshFiles: () => void;
 };
 
@@ -269,42 +268,6 @@ export function FileProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    // Generate a consistent avatar for a file
-    const getAvatarInfo = (fileName: string) => {
-        // Create a simple hash of the filename for consistent colors
-        let hash = 0;
-        for (let i = 0; i < fileName.length; i++) {
-            hash = fileName.charCodeAt(i) + ((hash << 5) - hash);
-        }
-
-        // Generate a style collection
-        const styles = [
-            'adventurer',
-            'adventurer-neutral',
-            'avataaars',
-            'big-ears',
-            'bottts',
-            'croodles',
-            'fun-emoji',
-            'icons',
-            'identicon',
-            'initials',
-            'lorelei',
-            'micah',
-            'miniavs',
-            'open-peeps',
-            'personas',
-            'pixel-art'
-        ];
-
-        // Use the hash to pick a consistent style for this file
-        const styleIndex = Math.abs(hash) % styles.length;
-        return {
-            style: styles[styleIndex],
-            seed: fileName
-        };
-    };
-
     // Force a refresh of the files
     const refreshFiles = () => {
         setRefreshCounter((prev) => prev + 1);
@@ -325,7 +288,6 @@ export function FileProvider({ children }: { children: ReactNode }) {
         addFiles,
         deleteSelectedFiles,
         getFileIcon,
-        getAvatarInfo,
         refreshFiles
     };
 

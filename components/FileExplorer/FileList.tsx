@@ -2,7 +2,7 @@ import type React from 'react';
 import { memo } from 'react';
 import { FileCardSkeleton } from './FileCardSkeleton';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import type { FileType, AvatarInfo } from '@/types/types';
+import type { FileType } from '@/types/types';
 import Heading from '../Heading';
 import { FileCard } from './FileCard';
 
@@ -13,7 +13,6 @@ interface FileListProps {
     checkedFiles: Set<string>;
     handleFileSelect: (id: string, e: React.MouseEvent) => void;
     handleCheckboxToggle: (id: string, e: React.MouseEvent) => void;
-    getAvatarInfo: (fileName: string) => AvatarInfo;
     emptyMessage?: string;
     isInitialLoading?: boolean;
     loadingFileIds?: Set<string>;
@@ -26,7 +25,6 @@ function FileListComponent({
     checkedFiles,
     handleFileSelect,
     handleCheckboxToggle,
-    getAvatarInfo,
     emptyMessage = 'No files found.',
     isInitialLoading = false,
     loadingFileIds = new Set()
@@ -67,7 +65,6 @@ function FileListComponent({
                             checkedFiles={checkedFiles}
                             handleFileSelect={handleFileSelect}
                             handleCheckboxToggle={handleCheckboxToggle}
-                            getAvatarInfo={getAvatarInfo}
                             isLast={index === files.length - 1}
                         />
                     );

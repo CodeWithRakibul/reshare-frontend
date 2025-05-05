@@ -8,11 +8,6 @@ export interface FileType {
     section: 'recent' | 'all';
 }
 
-export interface AvatarInfo {
-    style: string;
-    seed: string;
-}
-
 export interface User {
     id: string;
     name: string;

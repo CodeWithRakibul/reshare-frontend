@@ -5,9 +5,10 @@ import { memo } from 'react';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronRight } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import type { FileType, AvatarInfo } from '@/types/types';
+import type { FileType } from '@/types/types';
 import { FileIcon } from './FileIcon';
+import UserImage from '../Global/UserImage';
+import { user } from '@/lib/data';
 
 interface FileCardProps {
     file: FileType;
@@ -15,7 +16,6 @@ interface FileCardProps {
     checkedFiles: Set<string>;
     handleFileSelect: (id: string, e: React.MouseEvent) => void;
     handleCheckboxToggle: (id: string, e: React.MouseEvent) => void;
-    getAvatarInfo: (fileName: string) => AvatarInfo;
     isLast?: boolean;
 }
 
@@ -25,11 +25,8 @@ function FileCardComponent({
     handleCheckboxToggle,
     handleFileSelect,
     selectedFile,
-    getAvatarInfo,
     isLast = false
 }: FileCardProps) {
-    const { style, seed } = getAvatarInfo(file.name);
-
     return (
         <div
             className={cn(
@@ -61,13 +58,7 @@ function FileCardComponent({
             </div>
             <div className='flex items-center gap-3'>
                 <div className='text-[#777777] text-[13px] font-normal leading-5'>{file.date}</div>
-                <Avatar className='w-5 h-5'>
-                    <AvatarImage
-                        src={`https://api.dicebear.com/7.x/${style}/svg?seed=${seed}`}
-                        alt={`Avatar for ${file.name}`}
-                    />
-                    <AvatarFallback>{file.name.charAt(0).toUpperCase()}</AvatarFallback>
-                </Avatar>
+                <UserImage path={user.image} />
                 <div className='size-5 flex items-center justify-center'>
                     <ChevronRight
                         size={16}

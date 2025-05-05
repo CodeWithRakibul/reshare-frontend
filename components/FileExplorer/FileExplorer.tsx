@@ -22,7 +22,6 @@ export default function FileExplorer() {
         handleCheckboxToggle,
         createFolder,
         deleteSelectedFiles,
-        getAvatarInfo,
         isInitialLoading,
         loadingFileIds
     } = useFileContext();
@@ -83,7 +82,6 @@ export default function FileExplorer() {
                                                 checkedFiles={checkedFiles}
                                                 handleFileSelect={handleFileSelect}
                                                 handleCheckboxToggle={handleCheckboxToggle}
-                                                getAvatarInfo={getAvatarInfo}
                                                 isLast={index === recentlyVisited.length - 1}
                                             />
                                         );
@@ -101,7 +99,6 @@ export default function FileExplorer() {
                     checkedFiles={checkedFiles}
                     handleFileSelect={handleFileSelect}
                     handleCheckboxToggle={handleCheckboxToggle}
-                    getAvatarInfo={getAvatarInfo}
                     emptyMessage={
                         searchQuery
                             ? `No files found matching "${searchQuery}". Try a different search term.`
