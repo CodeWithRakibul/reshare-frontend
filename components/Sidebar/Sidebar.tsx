@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { UploadButton } from '../Global/UploadButton';
-import logo from '../../public/assets/Logo.svg';
+import logo from '../../public/assets/logo.svg';
 import Image from 'next/image';
 import UserImage from '../Global/UserImage';
 import { sidebarItems, sidebarSettings, user } from '@/lib/data';
