@@ -3,7 +3,9 @@ import Search from './Search';
 export default function Header() {
     return (
         <div className='p-3 sticky top-0 border-b flex items-center justify-between gap-3'>
-            <Breadcrumb showHome={false} />
+            <div className='md:ml-0 ml-10'>
+                <Breadcrumb showHome={false} />
+            </div>
             <Search />
         </div>
     );
