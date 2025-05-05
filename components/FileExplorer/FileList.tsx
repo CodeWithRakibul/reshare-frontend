@@ -35,7 +35,7 @@ function FileListComponent({
     if (isInitialLoading) {
         return (
             <div>
-                <div className='px-4 py-2'>
+                <div className='py-3'>
                     <Heading>{title}</Heading>
                 </div>
                 {Array.from({ length: title === 'Recently visited' ? 3 : 10 }).map((_, index) => (
@@ -47,7 +47,7 @@ function FileListComponent({
 
     return (
         <div>
-            <div className='px-4 py-2'>
+            <div className='py-3'>
                 <Heading>{title}</Heading>
             </div>
 

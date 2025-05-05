@@ -107,7 +107,7 @@ export default function FileExplorer() {
                     <>
                         {isInitialLoading ? (
                             <div>
-                                <div className='px-4 py-2'>
+                                <div className='pb-3'>
                                     <Heading>Recently visited</Heading>
                                 </div>
                                 {Array.from({ length: 3 }).map((_, index) => (
@@ -116,7 +116,7 @@ export default function FileExplorer() {
                             </div>
                         ) : (
                             <>
-                                <div className='px-4 py-3 flex items-center justify-between gap-3'>
+                                <div className='pb-3 flex items-center justify-between gap-3'>
                                     {searchQuery ? (
                                         <div></div>
                                     ) : (

@@ -1,9 +1,9 @@
-import Avatar from '../public/assets/Avatar.svg';
-import folderIcon from '../public/assets/sidebar-icons/Folder.svg';
-import shieldCheckIcon from '../public/assets/sidebar-icons/Shield-check.svg';
-import userIcon from '../public/assets/sidebar-icons/User.svg';
-import mailIcon from '../public/assets/sidebar-icons/Mail.svg';
-import settingIcon from '../public/assets/sidebar-icons/Setting.svg';
+import Avatar from '../public/assets/avatar.svg';
+import folderIcon from '../public/assets/sidebar-icons/folder.svg';
+import shieldCheckIcon from '../public/assets/sidebar-icons/shield-check.svg';
+import userIcon from '../public/assets/sidebar-icons/user.svg';
+import mailIcon from '../public/assets/sidebar-icons/mail.svg';
+import settingIcon from '../public/assets/sidebar-icons/setting.svg';
 import { SidebarItem, User } from '@/types/types';
 
 export const user: User = {

@@ -65,6 +65,8 @@ export function useUpload(
                         // Close the dialog after a delay
                         setTimeout(() => {
                             setIsUploadOpen(false);
+                            setUploadProgress(0);
+                            setUploadSuccess(false);
                         }, 1500);
 
                         return 100;
