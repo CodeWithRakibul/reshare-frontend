@@ -124,7 +124,7 @@ export function useUpload(
                 }
             }, updateInterval);
         },
-        [getFileType, onFilesUploaded]
+        [getFileType, onFilesUploaded, currentFileIndex]
     );
 
     // Cancel upload
