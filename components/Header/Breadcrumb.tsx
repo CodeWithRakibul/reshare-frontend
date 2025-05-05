@@ -89,8 +89,8 @@ export function Breadcrumb({
                     const shouldInsertEllipsis = index === ellipsisIndex && showEllipsis;
 
                     return (
-                        <div key={segment.href} className='flex items-center'>
-                            <BreadcrumbItem className="text-zinc-800 text-sm font-normal font-['Inter'] leading-tight">
+                        <div key={segment.href} className='flex items-center p-2'>
+                            <BreadcrumbItem className='text-foreground text-[13px] font-normal leading-5'>
                                 {segment.isLast ? (
                                     <BreadcrumbPage>{segment.label}</BreadcrumbPage>
                                 ) : (

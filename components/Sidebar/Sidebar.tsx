@@ -7,7 +7,7 @@ import { sidebarItems, sidebarSettings, user } from '@/lib/data';
 
 export function Sidebar() {
     return (
-        <div className='w-[280px] sticky top-0 border-r border-border bg-sidebar hidden md:flex flex-col h-screen p-3'>
+        <div className='w-[280px] sticky top-0 bg-sidebar hidden md:flex flex-col h-screen p-3'>
             <div className='p-1 pb-4'>
                 <Link href='/' className='flex items-center gap-2'>
                     <Image src={logo} alt='Logo' width={72} height={32} />
