@@ -52,7 +52,7 @@ function FileListComponent({
             </div>
 
             {files.length > 0 ? (
-                files.map((file) => {
+                files.map((file, index) => {
                     // If this specific file is loading, show skeleton
                     if (loadingFileIds.has(file.id)) {
                         return <FileCardSkeleton key={`loading-${file.id}`} />;
@@ -68,6 +68,7 @@ function FileListComponent({
                             handleFileSelect={handleFileSelect}
                             handleCheckboxToggle={handleCheckboxToggle}
                             getAvatarInfo={getAvatarInfo}
+                            isLast={index === files.length - 1}
                         />
                     );
                 })

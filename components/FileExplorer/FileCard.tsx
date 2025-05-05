@@ -16,6 +16,7 @@ interface FileCardProps {
     handleFileSelect: (id: string, e: React.MouseEvent) => void;
     handleCheckboxToggle: (id: string, e: React.MouseEvent) => void;
     getAvatarInfo: (fileName: string) => AvatarInfo;
+    isLast?: boolean;
 }
 
 function FileCardComponent({
@@ -24,15 +25,17 @@ function FileCardComponent({
     handleCheckboxToggle,
     handleFileSelect,
     selectedFile,
-    getAvatarInfo
+    getAvatarInfo,
+    isLast = false
 }: FileCardProps) {
     const { style, seed } = getAvatarInfo(file.name);
 
     return (
         <div
             className={cn(
-                'flex items-center p-3 hover:bg-zinc-100 cursor-pointer relative group border-b border-neutral-200 last:border-b-0',
+                'flex items-center p-3 hover:bg-zinc-100 cursor-pointer relative group',
                 selectedFile === file.id && 'bg-zinc-100',
+                isLast ? '' : 'border-b border-neutral-200',
                 checkedFiles.has(file.id) && 'bg-zinc-100'
             )}
             onClick={(e) => handleFileSelect(file.id, e)}

@@ -136,17 +136,20 @@ export default function FileExplorer() {
                                 </div>
 
                                 {!searchQuery &&
-                                    recentlyVisited.map((file, index) => (
-                                        <FileCard
-                                            key={`${file.id}-${index}`}
-                                            file={file}
-                                            selectedFile={selectedFile}
-                                            checkedFiles={checkedFiles}
-                                            handleFileSelect={handleFileSelect}
-                                            handleCheckboxToggle={handleCheckboxToggle}
-                                            getAvatarInfo={getAvatarInfo}
-                                        />
-                                    ))}
+                                    recentlyVisited.map((file, index) => {
+                                        return (
+                                            <FileCard
+                                                key={`${file.id}-${index}`}
+                                                file={file}
+                                                selectedFile={selectedFile}
+                                                checkedFiles={checkedFiles}
+                                                handleFileSelect={handleFileSelect}
+                                                handleCheckboxToggle={handleCheckboxToggle}
+                                                getAvatarInfo={getAvatarInfo}
+                                                isLast={index === recentlyVisited.length - 1}
+                                            />
+                                        );
+                                    })}
                             </>
                         )}
                     </>
