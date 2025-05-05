@@ -4,7 +4,7 @@ import shieldCheckIcon from '../public/assets/sidebar-icons/Shield-check.svg';
 import userIcon from '../public/assets/sidebar-icons/User.svg';
 import mailIcon from '../public/assets/sidebar-icons/Mail.svg';
 import settingIcon from '../public/assets/sidebar-icons/Setting.svg';
-import type { SidebarItem, User } from './types';
+import { SidebarItem, User } from '@/types/types';
 
 export const user: User = {
     id: '1',

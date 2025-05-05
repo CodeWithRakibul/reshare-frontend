@@ -1,7 +1,9 @@
-import React from 'react';
+import FileExplorer from '@/components/FileExplorer/FileExplorer';
 
-const LibraryPage = () => {
-    return <div>Library Page</div>;
-};
-
-export default LibraryPage;
+export default function Library() {
+    return (
+        <div className='px-10 py-5'>
+            <FileExplorer />
+        </div>
+    );
+}
