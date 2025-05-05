@@ -1,8 +1,29 @@
 import Link from 'next/link';
 import { Avatar } from '@/components/ui/avatar';
 import { UploadButton } from './UploadButton';
-import logo from '../public/logo.png';
+import logo from '../public/assets/logo.svg';
 import Image from 'next/image';
+import folderIcon from '../public/assets/sidebar-icons/folder.svg';
+import shieldCheckIcon from '../public/assets/sidebar-icons/shield-check.svg';
+import userIcon from '../public/assets/sidebar-icons/user.svg';
+
+export const sidebarItems = [
+    {
+        title: 'Library',
+        icon: folderIcon,
+        href: '/dashboard'
+    },
+    {
+        title: 'Data Rooms',
+        icon: shieldCheckIcon,
+        href: '/data-rooms'
+    },
+    {
+        title: 'Visitors',
+        icon: userIcon,
+        href: '/visitors'
+    }
+];
 
 export function Sidebar() {
     return (
@@ -18,7 +39,25 @@ export function Sidebar() {
             </div>
 
             <nav className='space-y-1'>
-                <Link
+                {sidebarItems.map((item) => (
+                    <Link
+                        key={item.title}
+                        href={item.href}
+                        className='flex items-center px-3 py-2 rounded-md text-[13px] font-normal leading-5 text-foreground hover:bg-sidebar-accent hover:text-accent-foreground transition-colors'
+                    >
+                        <span className='flex gap-2 items-center'>
+                            <Image
+                                src={item.icon}
+                                alt={item.title}
+                                width={16}
+                                height={16}
+                                className='text-foreground'
+                            />
+                            {item.title}
+                        </span>
+                    </Link>
+                ))}
+                {/* <Link
                     href='/'
                     className='flex items-center px-3 py-2 rounded-md bg-accent text-accent-foreground'
                 >
@@ -101,10 +140,10 @@ export function Sidebar() {
                         />
                     </svg>
                     Visitors
-                </Link>
+                </Link> */}
             </nav>
 
-            <div className='mt-auto px-3 pb-6 space-y-1'>
+            <div className='mt-auto pb-6 space-y-1'>
                 <Link
                     href='/invite'
                     className='flex items-center px-3 py-2 rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors'
