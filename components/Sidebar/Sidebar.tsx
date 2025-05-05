@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { UploadButton } from '../Global/UploadButton';
 import logo from '../../public/assets/logo.svg';
 import Image from 'next/image';
 import UserImage from '../Global/UserImage';
 import { sidebarItems, sidebarSettings, user } from '@/lib/data';
 import { usePathname } from 'next/navigation';
+import UploadFile from '../FileExplorer/UploadFile';
 
 export function Sidebar() {
     const pathname = usePathname();
@@ -20,7 +20,7 @@ export function Sidebar() {
             </div>
 
             <div className='mb-3'>
-                <UploadButton variant='default' size={'lg'} />
+                <UploadFile size={'lg'} />
             </div>
 
             <nav>

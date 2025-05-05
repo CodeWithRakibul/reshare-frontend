@@ -2,12 +2,12 @@
 
 import type React from 'react';
 import { memo } from 'react';
-import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SearchBar } from './SearchBar';
 import { SelectedFilesBar } from './SelectedFilesBar';
 import folderAddIcon from '../../public/assets/folder-add.svg';
 import Image from 'next/image';
+import UploadFile from './UploadFile';
 
 interface ToolbarProps {
     isSearchOpen: boolean;
@@ -15,7 +15,6 @@ interface ToolbarProps {
     setSearchQuery: (query: string) => void;
     toggleSearch: () => void;
     searchInputRef: React.RefObject<HTMLInputElement>;
-    onUploadClick: () => void;
     onCreateFolderClick: () => void;
     deleteSelectedFiles: () => void;
     checkedFiles: Set<string>;
@@ -27,7 +26,6 @@ function ToolbarComponent({
     setSearchQuery,
     toggleSearch,
     searchInputRef,
-    onUploadClick,
     onCreateFolderClick,
     deleteSelectedFiles,
     checkedFiles
@@ -45,10 +43,7 @@ function ToolbarComponent({
             <Button variant='secondary' size='icon' onClick={onCreateFolderClick}>
                 <Image src={folderAddIcon} alt='Folder Add Icon' width={20} height={20} />
             </Button>
-            <Button onClick={onUploadClick} size='sm'>
-                <Plus className='text-neutral-400' size={16} />
-                <span className='hidden sm:block'>Upload</span>
-            </Button>
+            <UploadFile />
         </div>
     );
 }
