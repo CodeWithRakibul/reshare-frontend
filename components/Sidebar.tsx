@@ -2,48 +2,12 @@ import Link from 'next/link';
 import { UploadButton } from './UploadButton';
 import logo from '../public/assets/Logo.svg';
 import Image from 'next/image';
-import folderIcon from '../public/assets/sidebar-icons/Folder.svg';
-import shieldCheckIcon from '../public/assets/sidebar-icons/Shield-check.svg';
-import userIcon from '../public/assets/sidebar-icons/User.svg';
-import mailIcon from '../public/assets/sidebar-icons/Mail.svg';
-import settingIcon from '../public/assets/sidebar-icons/Setting.svg';
 import UserImage from './UserImage';
-import { user } from '@/lib/data';
-
-export const sidebarItems = [
-    {
-        title: 'Library',
-        icon: folderIcon,
-        href: '/library'
-    },
-    {
-        title: 'Data Rooms',
-        icon: shieldCheckIcon,
-        href: '/data-rooms'
-    },
-    {
-        title: 'Visitors',
-        icon: userIcon,
-        href: '/visitors'
-    }
-];
-
-export const sidebarSettings = [
-    {
-        title: 'Invite',
-        icon: mailIcon,
-        href: '/invite'
-    },
-    {
-        title: 'Settings',
-        icon: settingIcon,
-        href: '/settings'
-    }
-];
+import { sidebarItems, sidebarSettings, user } from '@/lib/data';
 
 export function Sidebar() {
     return (
-        <div className='w-[284px] border-r border-border bg-sidebar hidden md:flex flex-col h-screen p-3'>
+        <div className='w-[280px] sticky border-r border-border bg-sidebar hidden md:flex flex-col h-screen p-3'>
             <div className='p-1 pb-4'>
                 <Link href='/' className='flex items-center gap-2'>
                     <Image src={logo} alt='Logo' width={72} height={32} />
