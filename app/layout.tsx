@@ -16,11 +16,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en' suppressHydrationWarning>
             <body className={inter.className}>
-                <div className='flex w-full h-screen'>
-                    <ResponsiveSidebar />
-                    <div className='flex-1 flex flex-col bg-white'>
+                <div className='flex w-full h-screen justify-between'>
+                    <div className='md:w-[280px] relative z-50'>
+                        <ResponsiveSidebar />
+                    </div>
+                    <div className='flex flex-col bg-white w-full md:w-[calc(100vw-280px)]'>
                         <Header />
-                        <main className='flex-1'>{children}</main>
+                        <main>{children}</main>
                     </div>
                 </div>
                 <Toaster />

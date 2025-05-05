@@ -61,7 +61,7 @@ export function ResponsiveSidebar() {
             {/* Sidebar - Important: removed the conditional transform */}
             <div
                 className={`
-          fixed md:sticky top-0 left-0 z-40 h-screen
+          fixed top-0 left-0 z-40 h-screen
           transition-transform duration-300 ease-in-out
           md:translate-x-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}

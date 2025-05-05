@@ -12,7 +12,7 @@ export function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <div className='w-[280px] sticky top-0 bg-sidebar flex flex-col h-screen p-3'>
+        <div className='w-[280px] bg-sidebar flex flex-col h-screen p-3'>
             <div className='p-1 pb-4'>
                 <Link href='/' className='flex items-center gap-2'>
                     <Image src={logo || '/placeholder.svg'} alt='Logo' width={72} height={32} />
