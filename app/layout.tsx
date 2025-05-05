@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </div>
                         <div className='flex flex-col bg-white w-full md:w-[calc(100%-280px)]'>
                             <Header />
-                            <main>{children}</main>
+                            <main className='h-full'>{children}</main>
                         </div>
                     </FileProvider>
                 </div>
